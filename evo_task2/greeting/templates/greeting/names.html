@@ -1,0 +1,18 @@
+{% extends 'greeting/base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+    <h1>List of names</h1>
+    <ul style="list-style: none">
+        {% if full_names %}
+            {% for full_name in full_names %}
+                <li class="mt-2">{{ full_name.first_name }} {{full_name.last_name}}</li>
+            {% endfor %}
+        {% else %}
+            <li class="mt-2">No names yet!</li>
+        {% endif %}
+    </ul>
+{% endblock %}

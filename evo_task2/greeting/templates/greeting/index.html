@@ -1,0 +1,17 @@
+{% extends 'greeting/base.html' %}
+
+{% block title %}
+Greeting page
+{% endblock %}
+
+{% block content %}
+    <h1>Greeting page</h1>
+    <form method="post" class="mt-4" style="margin:0 auto; max-width: 60%">
+        {% csrf_token %}
+        {{ form.first_name }}<br>
+        {{ form.last_name }}<br>
+        <button type="submit" class="btn btn-secondary">Greeting</button>
+        <span>{{ error }}</span>
+    </form>
+    <p class="mt-4 pt-4">{{ greeting_msg }}</p>
+{% endblock %}
